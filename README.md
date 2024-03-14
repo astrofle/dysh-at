@@ -1,5 +1,5 @@
 # `dysh-at`
-## `dysh` cceptance Testing
+## `dysh` Acceptance Testing
 
 A place to keep the artifacts from acceptance testing.
 
