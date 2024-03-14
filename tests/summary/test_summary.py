@@ -60,8 +60,8 @@ def test_summary():
         gbtidl_summary = read_gbtidl_summary(f"{path}/{proj}/gbtidl/{proj}.summary")
 
         for col in cols.items():
-            assert_series_equal(dysh_df[col[0]].sort_values(), 
-                                gbtidl_summary[col[1]].sort_values(), 
+            assert_series_equal(dysh_df[col[0]], #.sort_values(), 
+                                gbtidl_summary[col[1]], #.sort_values(), 
                                 check_dtype=False, 
                                 check_names=False,
                                 check_index=False)
