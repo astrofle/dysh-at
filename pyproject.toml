@@ -1,0 +1,30 @@
+[project]
+name = "dysh-at"
+version = "0.0.1"
+authors = [
+  { name="Pedro Salas", email="psalas@nrao.edu" },
+]
+description = "Acceptance Testing for dysh"
+readme = "README.md"
+requires-python = ">=3.9"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+  "dysh",
+  "pytest",
+]
+
+[project.urls]
+Homepage = "https://github.com/astrofle/dysh-at"
+Issues = "https://github.com/astrofle/dysh/issues"
+
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+testpaths = ["tests"]
+filterwarnings = [
+    "ignore::DeprecationWarning"
+    ]
