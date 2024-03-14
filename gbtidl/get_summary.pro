@@ -1,6 +1,7 @@
 pro get_summary
 
-path = "/home/dysh/acceptance_testing/data/"
+path_config
+path = !data_path ;"/home/dysh/acceptance_testing/data/"
 
 ; VEGAS files
 proj_list = ["AGBT14B_480_06",$
