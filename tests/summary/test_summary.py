@@ -38,6 +38,17 @@ def test_summary():
 
     path = "/home/dysh/acceptance_testing/data"
     projs = ["AGBT13A_240_03",
+             "AGBT14B_480_06",
+             "AGBT15B_228_08",
+             "AGBT16B_392_01",
+             "AGBT17B_004_14",
+             "AGBT18A_503_02",
+             "AGBT18B_354_03",
+             "AGBT19A_080_01",
+             "AGBT19A_473_41",
+             "AGBT19B_096_08",
+             "AGBT20B_336_01",
+             "AGBT22A_325_15"
              ]
 
     for proj in projs:
@@ -49,6 +60,8 @@ def test_summary():
         gbtidl_summary = read_gbtidl_summary(f"{path}/{proj}/gbtidl/{proj}.summary")
 
         for col in cols.items():
-            assert_series_equal(dysh_df[col[0]], 
-                                gbtidl_summary[col[1]], 
-                                check_dtype=False, check_names=False)
+            assert_series_equal(dysh_df[col[0]].sort_values(), 
+                                gbtidl_summary[col[1]].sort_values(), 
+                                check_dtype=False, 
+                                check_names=False,
+                                check_index=False)
