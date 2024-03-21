@@ -26,10 +26,12 @@ for i=0,s[1]-1 do begin
 endfor
 
 ; ACS files
-proj_list = ["AGBT13A_240_03"]
+proj_list = ["AGBT13A_240_03",$
+             "AGBT05B_047_01",$
+             "TREG_050627"]
 s = size(proj_list)
 for i=0,s[1]-1 do begin
-    input  = path+proj_list[i]+"/"+proj_list[i]+".raw.acs.fits"
+    input  = path+proj_list[i]+"/"+proj_list[i]+".raw.acs"
     output = path+proj_list[i]+"/gbtidl/"+proj_list[i]+".summary"
     filein,input
     summary,output
