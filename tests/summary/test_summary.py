@@ -48,14 +48,15 @@ def test_summary():
              "AGBT19A_473_41",
              "AGBT19B_096_08",
              "AGBT20B_336_01",
-             "AGBT22A_325_15"
+             "AGBT22A_325_15",
+             "TREG_050627"
              ]
 
     for proj in projs:
         try:
             sdf = GBTFITSLoad(f"{path}/{proj}/{proj}.raw.vegas/")
         except:
-            sdf = GBTFITSLoad(f"{path}/{proj}/")
+            sdf = GBTFITSLoad(f"{path}/{proj}/{proj}.raw.acs/")
         dysh_df = sdf.summary()
         gbtidl_summary = read_gbtidl_summary(f"{path}/{proj}/gbtidl/{proj}.summary")
 
